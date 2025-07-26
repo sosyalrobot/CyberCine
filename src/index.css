@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-once {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+.animate-pulse-once {
+  animation: pulse-once 0.5s ease-out;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--theme-primary, #00ff41);
+  border-radius: 3px;
+  opacity: 0.5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-accent, #00ff41);
+  opacity: 0.8;
+}
+
+/* Selection styling */
+::selection {
+  background: var(--theme-primary, #00ff41);
+  color: var(--theme-background, #000000);
+}
+
+/* Ensure proper contrast for select elements */
+select option {
+  background: var(--theme-background, #000000);
+  color: var(--theme-text, #00ff41);
+}
